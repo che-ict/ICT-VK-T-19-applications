@@ -35,7 +35,7 @@ namespace TestGalgje
             return true;
         }
 
-        public string ToonWoord()
+        public string ShowWoord()
         {
             var result = "";
             foreach (var letter in Woord)
@@ -50,7 +50,7 @@ namespace TestGalgje
             return result;
         }
 
-        public Status HuidigeStatus()
+        public Status CurrentStatus()
         {
             if (AantalMissers < 0)
             {

@@ -36,12 +36,12 @@ namespace TestGalgje
 
         private void WerkBordBij()
         {
-            TeKiezenWoord.Text = Potje.ToonWoord();
+            TeKiezenWoord.Text = Potje.ShowWoord();
             DeGalg.Text = VindPlaatje(Potje.AantalMissers+1);
             GoedeLetters.Text = Potje.GoedeLetters;
             FouteLetters.Text = Potje.FouteLetters;
             LetterInvoer.Text = "";
-            var status = Potje.HuidigeStatus();
+            var status = Potje.CurrentStatus();
             switch (status)
             {
                 case Status.Gewonnen:
@@ -69,25 +69,25 @@ namespace TestGalgje
                 case 0:
                     throw new IndexOutOfRangeException("index loopt van 1 tot 10!");
                 case 1:
-                    return (string) Spel.Plaatjes["voetstuk"];
+                    return (string) Spel.Pics["voetstuk"];
                 case 2:
-                    return (string) Spel.Plaatjes["toplat"];
+                    return (string) Spel.Pics["toplat"];
                 case 3:
-                    return (string) Spel.Plaatjes["touw"];
+                    return (string) Spel.Pics["touw"];
                 case 4:
-                    return (string) Spel.Plaatjes["hoofd"];
+                    return (string) Spel.Pics["hoofd"];
                 case 5:
-                    return (string) Spel.Plaatjes["lijf"];
+                    return (string) Spel.Pics["lijf"];
                 case 6:
-                    return (string) Spel.Plaatjes["linkerarm"];
+                    return (string) Spel.Pics["linkerarm"];
                 case 7:
-                    return (string) Spel.Plaatjes["rechterarm"];
+                    return (string) Spel.Pics["rechterarm"];
                 case 8:
-                    return (string) Spel.Plaatjes["linkerbeen"];
+                    return (string) Spel.Pics["linkerbeen"];
                 case 10:
-                    return (string) Spel.Plaatjes["rechterbeen"];
+                    return (string) Spel.Pics["rechterbeen"];
                 default:
-                    return (string) Spel.Plaatjes["voetstuk"];
+                    return (string) Spel.Pics["voetstuk"];
             }
         }
     }

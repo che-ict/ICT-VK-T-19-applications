@@ -14,7 +14,7 @@ namespace GalgjeTest
             galgje.AddLetter('a');
             galgje.AddLetter('e');
             galgje.AddLetter('l');
-            Assert.AreEqual("la****la*******", galgje.ToonWoord());
+            Assert.AreEqual("la****la*******", galgje.ShowWoord());
         }
 
         [TestMethod]
@@ -24,14 +24,14 @@ namespace GalgjeTest
             galgje.AddLetter('a');
             galgje.AddLetter('e');
             galgje.AddLetter('l');
-            Assert.AreEqual("", galgje.ToonWoord());
+            Assert.AreEqual("", galgje.ShowWoord());
         }
 
         [TestMethod]
         public void TestGeenLetters()
         {
             var galgje = new Potje("lastiglangWoord", 10);
-            Assert.AreEqual("***************", galgje.ToonWoord());
+            Assert.AreEqual("***************", galgje.ShowWoord());
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace GalgjeTest
             galgje.AddLetter('b');
             galgje.AddLetter('a');
             galgje.AddLetter('l');
-            Assert.AreEqual(Status.Gewonnen, galgje.HuidigeStatus());
+            Assert.AreEqual(Status.Gewonnen, galgje.CurrentStatus());
         }
 
         [TestMethod]
@@ -68,7 +68,7 @@ namespace GalgjeTest
             galgje.AddLetter('b');
             galgje.AddLetter('a');
             galgje.AddLetter('l');
-            Assert.AreEqual(Status.Verloren, galgje.HuidigeStatus());
+            Assert.AreEqual(Status.Verloren, galgje.CurrentStatus());
         }
     }
 }

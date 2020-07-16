@@ -8,7 +8,7 @@ namespace TestGalgje
         public Potje CreatePotje()
         {
             var index = new Random().Next(0, Woorden.Length);
-            return new Potje(Woorden[index], Plaatjes.Keys.Count);
+            return new Potje(Woorden[index], Pics.Keys.Count);
         }
 
         // alle teksten die je nodig hebt in een spel
@@ -27,7 +27,7 @@ namespace TestGalgje
         };
 
         // De ASCII-art nodig voor een spel
-        public readonly Dictionary<string, object> Plaatjes = new Dictionary<string, object>{{"voetstuk",
+        public readonly Dictionary<string, object> Pics = new Dictionary<string, object>{{"voetstuk",
 @"       
        
        
