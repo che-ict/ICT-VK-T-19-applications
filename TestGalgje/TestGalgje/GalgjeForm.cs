@@ -24,10 +24,10 @@ namespace TestGalgje
 
         private void Kies_Click(object sender, EventArgs e)
         {
-            var letter = LetterInvoer.Text.SingleOrDefault();
+            var letter = LetterInvoer.Text.Single();
             if (!Potje.AddLetter(letter))
             {
-                ValidatieMelding.Text = Spel.ValiedatieMelding;
+                ValidatieMelding.Text = Spel.ValidatieMelding;
                 return;
             }
 

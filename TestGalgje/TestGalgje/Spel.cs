@@ -11,7 +11,7 @@ namespace TestGalgje
         }
 
         // alle teksten die je nodig hebt in een spel
-        public string ValiedatieMelding = "Kies een letter die je nog niet eerder gekozen hebt dit potje";
+        public string ValidatieMelding = "Kies een letter die je nog niet eerder gekozen hebt dit potje";
         public string GewonnenMelding = "Yes!";
         public string VerlorenMelding = "Helaas...";
         public string NormaleHerstartButtonTekst = "Herstart";
@@ -66,6 +66,13 @@ namespace TestGalgje
   |   |
   O   |
   |   |
+      |
+      |
+  =========",
+@"  +---+
+  |   |
+  O   |
+ /|   |
       |
       |
   =========",
