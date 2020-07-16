@@ -20,46 +20,50 @@ namespace TestGalgje
 
         public bool AddLetter(char? letter)
         {
-            if (HuidigeStatus() != Status.Onbeslist)
-            {// geen letters toevoegen als het spel al afgelopen is
-                return false;
-            }
-            if (!letter.HasValue)
-            {// niks ingevuld => niks doen
-                return false;
-            }
-            var lowerCaseLetter = letter.ToString().ToLowerInvariant().Single();
-            if (GoedeLetters.Contains(lowerCaseLetter) || FouteLetters.Contains(lowerCaseLetter))
+            if (GoedeLetters.Contains(letter.Value) || FouteLetters.Contains(letter.Value))
             {// letters mogen niet al eerder gebruikt zijn
                 return false;
             }
-            if (!Woord.Contains(lowerCaseLetter))
+            if (!Woord.Contains(letter.Value))
             {
-                FouteLetters += lowerCaseLetter;
+                FouteLetters = FouteLetters + letter;
             }
             else
             {
-                GoedeLetters += lowerCaseLetter;
+                GoedeLetters = GoedeLetters + letter;
             }
             return true;
         }
 
         public string ToonWoord()
         {
-            // de kracht van C# en linq:
-            // van woord naar char[] naar IEnumerable naar char[] naar string in 1 regel :-)
-            return new string(Woord.Select(l => GoedeLetters.Contains(l) ? l : '*').ToArray());
+            var result = "";
+            foreach (var letter in Woord)
+            {
+                if (GoedeLetters.Any(gl => gl == letter))
+                    result = result + letter;
+                else
+                    result = result + '*';
+                    result = result + ' ';
+            }
+
+            return result;
         }
 
         public Status HuidigeStatus()
         {
-            if (AantalMissers >= MaxPogingen)
+            if (AantalMissers < 0)
+            {
+                return Status.Invalid;
+            }
+
+            if (AantalMissers > MaxPogingen)
             {
                 return Status.Verloren;
             }
 
             // meer linq: als voor alle letters (l) in woord geldt dat ze voorkomen in goedeLetters...
-            // Ja, dan zijn alle letters en is het hele woord dus geraden
+            // Ja, dan zijn alle letters en dus het hele woord geraden
             return Woord.All(l => GoedeLetters.Contains(l))
                 ? Status.Gewonnen
                 : Status.Onbeslist;
@@ -70,6 +74,7 @@ namespace TestGalgje
     {
         Gewonnen,
         Verloren,
-        Onbeslist
+        Onbeslist,
+        Invalid
     }
 }

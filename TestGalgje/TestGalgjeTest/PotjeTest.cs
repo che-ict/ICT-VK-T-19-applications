@@ -10,7 +10,7 @@ namespace GalgjeTest
         [TestMethod]
         public void TestLastigWoord()
         {
-            var galgje = new Potje("lastiglangwoord", 10);
+            var galgje = new Potje("lastiglangWoord", 10);
             galgje.AddLetter('a');
             galgje.AddLetter('e');
             galgje.AddLetter('l');
@@ -30,14 +30,14 @@ namespace GalgjeTest
         [TestMethod]
         public void TestGeenLetters()
         {
-            var galgje = new Potje("lastigLangWoord", 10);
+            var galgje = new Potje("lastiglangWoord", 10);
             Assert.AreEqual("***************", galgje.ToonWoord());
         }
 
         [TestMethod]
         public void TestDubbeleLetters()
         {
-            var galgje= new Potje("b", 10);
+            var galgje= new Potje("x", 10);
             Assert.IsTrue(galgje.AddLetter('a'));
             Assert.IsFalse(galgje.AddLetter('a'));
         }
@@ -64,7 +64,7 @@ namespace GalgjeTest
         [TestMethod]
         public void TestVerloren()
         {
-            var galgje = new Potje("stoot", 3);
+            var galgje = new Potje("stoot", 2);
             galgje.AddLetter('b');
             galgje.AddLetter('a');
             galgje.AddLetter('l');

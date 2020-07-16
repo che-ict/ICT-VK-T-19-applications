@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TestGalgje
 {
@@ -6,96 +7,96 @@ namespace TestGalgje
     {
         public Potje CreatePotje()
         {
-            var index = new Random().Next(0, woorden.Length);
-            return new Potje(woorden[index], Plaatjes.Length);
+            var index = new Random().Next(0, Woorden.Length);
+            return new Potje(Woorden[index], Plaatjes.Keys.Count);
         }
 
         // alle teksten die je nodig hebt in een spel
-        public string ValidatieMelding = "Kies een letter die je nog niet eerder gekozen hebt dit potje";
+        public string ValiedatieMelding = "Kies een leter die je nog niet eerder gekozen hebt dit potje";
         public string GewonnenMelding = "Yes!";
         public string VerlorenMelding = "Helaas...";
-        public string NormaleHerstartButtonTekst = "Herstart";
+        public string NormaleHerstartButtonTekst = "Hertart";
         public string AfgelopenHerstartButtonTekst = "Nog een keer";
 
         // een setje leuke woorden
-        private readonly string[] woorden =
+        public string[] Woorden =
         {
-            "taxi", "quasi", "ei", "Quiz", "Lynx", "etui", "psyche", "dodo", "party", "Hyena", "picknick", "gymzaal",
+            "taxi", "quasi", "ei", "quiz", "lynx", "etui", "psyche", "dodo", "party", "hyena", "picknick", "gymzaal",
             "oase", "fauna", "cycloon", "qua", "uier", "sfinx", "curry", "cacao", "galerij", "sambal", "bushalte",
             "jazzzanger", "winnaar"
         };
 
         // De ASCII-art nodig voor een spel
-        public readonly string[] Plaatjes ={
+        public readonly Dictionary<string, object> Plaatjes = new Dictionary<string, object>{{"voetstuk",
 @"       
        
        
        
        
        
-  =========",
-@"       
+  ========="},
+{"paal", @"       
       |
       |
       |
       |
       |
-  =========",
-@"  +---+
+  ========="},
+{"toplat", @"  +---+
       |
       |
       |
       |
       |
-  =========",
-@"  +---+
+  ========="},
+{"touw", @"  +---+
   |   |
       |
       |
       |
       |
-  =========",
-@"  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-  =========",
-@"  +---+
+  ========="},
+{"hoofd", @"  +---+
   |   |
   O   |
+      |
+      |
+      |
+  ========="},
+{"romp", @"  +---+
+  |   |
+  O   |
   |   |
       |
       |
-  =========",
-@"  +---+
+  ========="},
+{"linkerarm", @"  +---+
   |   |
   O   |
  /|   |
       |
       |
-  =========",
-@"  +---+
+  ========="},
+{"rechterarm", @"  +---+
   |   |
   O   |
  /|\  |
       |
       |
-  =========",
-@"  +---+
+  ========="},
+{"linkerbeen",@"  +---+
   |   |
   O   |
  /|\  |
  /    |
       |
-  =========",
-@"  +---+
+  ========="},
+{"rechterbeen",@"  +---+
   |   |
   O   |
  /|\  |
  / \  |
       |
-  ========="};
+  ========="}};
     }
 }
