@@ -1,7 +1,7 @@
 # ICT-VK-T-19-applications
 
-You will need this repository to get some applications which will be tested during ICT-VK-T-19.
+Deze repository bevat applicaties die je nodig hebt voor de opdrachten van het vak Testen (ICT-VK-T-19).
 
-To get your own copy of this repository click on the green 'Clone' button, or the white 'Fork' button at the top.
+Om je eigen versie van deze repository te krijgen klik je op de groene 'Clone' knop, of op de witte 'Fork' knop bovenaan.
 
-> NOTE: make sure your fork will be a private repository, not a public one!
+> LET OP: zorg dat je fork een private (prive) repository is, en niet public (openbaar)!
